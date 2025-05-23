@@ -1,0 +1,20 @@
+{
+  "name": "node-lambda-sei-fme",
+  "version": "1.0.0",
+  "description": "AWS Lambda function to transform Split.io feature flag change events into a standardized deployment format",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "split.io",
+    "feature-flags"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2"
+  }
+}
