@@ -1,10 +1,10 @@
 # Harness FME Feature Flag Transformation Lambda
 
-This AWS Lambda function transforms Harness FME feature flag change events into a standardized deployment format for FME and sends the result to a configurable endpoint via HTTP POST.
+This AWS Lambda function transforms Harness FME feature flag change events into a standardized deployment format for FME and sends the result to a SEI endpoint via HTTP POST.
 
 ## Overview
 
-The Lambda function takes a JSON payload from a Harness FME webhook containing information about feature flag changes, transforms it into a standardized format for deployment tracking, and sends it to a configurable endpoint.
+The Lambda function takes a JSON payload from a [Harness FME Audit webhook](https://help.split.io/hc/en-us/articles/360020957991-Webhook-audit-log) containing information about feature flag changes, transforms it into a standardized format for deployment tracking, and sends it to a SEI endpoint.
 
 ## Input Format
 
@@ -60,24 +60,12 @@ This integration will be treated in Harness SEI as a [Custom CICD Integration](h
 The function requires the following environment variables:
 
 - `TARGET_ENDPOINT`: The URL of the endpoint to which the transformed data will be sent (e.g., the CICD url in your SEI instance)
-- `AUTH_TOKEN`: An authorization token to include in requests to the target endpoint - this is your SEI API Key
+- `AUTH_TOKEN`: An authorization token to include in requests to the SEI endpoint - this is your SEI API Key
 - `INSTANCE_GUID`: A unique identifier for the instance that will be included in the transformed output data (e.g., you send a CURL request to `https://app.harness.io/prod1/sei/api/v1/cicd/instances` as described in the [SEI documentation](https://developer.harness.io/docs/software-engineering-insights/setup-sei/configure-integrations/custom-cicd/sei-custom-cicd-integration/#step-2-generate-a-cicd-instance-guid-associated-with-that-integration) and you will receive a response with an `id` that is the instance guid)
 
 ## Usage
 
-### Local Testing
 
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the test script to verify the function works correctly:
-
-```bash
-npm test
-```
 
 ### AWS Lambda Deployment
 
