@@ -80,7 +80,7 @@ The function requires the following environment variables:
    ```
 
 3. Deploy to AWS Lambda:
-   ```bash
+```bash
    aws lambda create-function \
      --function-name split-io-transformation \
      --runtime nodejs18.x \
@@ -91,7 +91,7 @@ The function requires the following environment variables:
 TARGET_ENDPOINT=https://your-endpoint.com/api/webhook,\
 AUTH_TOKEN=your-auth-token,\
 INSTANCE_GUID=your-instance-guid}
-   ```
+```
 
 4. Or update an existing function:
    ```bash
@@ -105,9 +105,9 @@ INSTANCE_GUID=your-instance-guid}
    aws lambda update-function-configuration \
      --function-name split-io-transformation \
      --environment Variables={\
-TARGET_ENDPOINT=https://your-endpoint.com/api/webhook,\
-AUTH_TOKEN=your-auth-token,\
-INSTANCE_GUID=your-instance-guid}
+       TARGET_ENDPOINT=https://your-endpoint.com/api/webhook,\
+       AUTH_TOKEN=your-auth-token,\
+       INSTANCE_GUID=your-instance-guid}
    ```
 
 ## Setting Up with Harness FME
